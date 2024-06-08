@@ -7,13 +7,14 @@
       .jumbotron {
         padding: 20px;
         margin-bottom: 20px;
-        background-color: #D3D3D3;
+        background-color: #d3d3d3;
       }
     </style>
   </head>
   <body>
     {% include 'inc/navbar.html' %}
     <div class="jumbotron">
+      {% include 'inc/messages.html' %}
       {% block content %}
 
       {% endblock %}
