@@ -14,7 +14,8 @@ class UserRegisterView(View):
 
     def get(self, request):
         form = self.form_class()
-
+        if request.user.is_authenticated:
+            return redirect("home:home")
         return render(request, self.template_form, {"form": form})
 
     def post(self, request):
