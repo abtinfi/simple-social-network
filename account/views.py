@@ -4,6 +4,7 @@ from .forms import UserRegisterForm, UserLogInForm
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
@@ -56,7 +57,8 @@ class UserLogInView(View):
         return render(request, self.template_name, {"form": form})
 
 
-class UserLogOutView(View):
+class UserLogOutView(LoginRequiredMixin, View):
+    #login_url = "/account/login/"
     def get(self, request):
         logout(request)
         messages.success(request, "user logout successfuly", "success")
