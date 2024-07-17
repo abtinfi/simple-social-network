@@ -16,4 +16,5 @@ urlpatterns = [
         "post/update/<int:post_id>", views.PostUpdateView.as_view(), name="post_update"
     ),
     path("post/create/", views.PostCreateView.as_view(), name="post_create"),
+    
 ]

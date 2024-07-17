@@ -130,3 +130,13 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
     "account.authenticate.EmailBackend",
 ]
+
+# connect google account
+
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = ""  # your gmail
+EMAIL_PORT = 587
+EMAIL_HOST_PASSWORD = ""  # your app password of gmail
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "abtin test server"
