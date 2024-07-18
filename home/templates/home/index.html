@@ -1,9 +1,14 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  home index page<div class="card">
+  <form action="" method="get" novalidate>
+    {{ form.as_p }}
+    <input type="submit" value="search" />
+    <br />
+
+  </form>home index page<div class="card">
     {% for post in posts %}
-      <a href="{{post.get_absolute_url}}" class="card-body">{{ post.body|truncatewords:8 }}</a>
+      <a href="{{ post.get_absolute_url }}" class="card-body">{{ post.body|truncatewords:8 }}</a>
     {% endfor %}
   </div>
 {% endblock %}
